@@ -1,0 +1,48 @@
+{
+    "name": "auto-close-tag",
+    "displayName": "Auto Close Tag",
+    "description": "Automatically add close tag, same as Visual Studio IDE",
+    "version": "0.0.1",
+    "publisher": "formulahendry",
+    "icon": "images/logo.png",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Productivity",
+        "Other",
+        "Languages"
+    ],
+    "keywords": [
+        "AutoComplete",
+        "CloseTag"
+    ],
+    "bugs": {
+        "url": "https://github.com/formulahendry/vscode-auto-close-tag/issues",
+        "email": "formulahendry@gmail.com"
+    },
+    "homepage": "https://github.com/formulahendry/vscode-auto-close-tag/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/formulahendry/vscode-auto-close-tag.git"      
+    },
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [{
+            "command": "extension.sayHello",
+            "title": "Hello World"
+        }]
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^1.8.5",
+        "vscode": "^0.11.0"
+    }
+}
