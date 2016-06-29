@@ -2,7 +2,7 @@
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
     "description": "Automatically add close tag, same as Visual Studio IDE",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
@@ -24,17 +24,24 @@
     "homepage": "https://github.com/formulahendry/vscode-auto-close-tag/blob/master/README.md",
     "repository": {
         "type": "git",
-        "url": "https://github.com/formulahendry/vscode-auto-close-tag.git"      
+        "url": "https://github.com/formulahendry/vscode-auto-close-tag.git"
     },
     "activationEvents": [
         "*"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "configuration": {
+            "type": "object",
+            "title": "Auto Close Tag configuration",
+            "properties": {
+                "auto-close-tag.activationOnLanguage": {
+                    "type": "array",
+                    "default": ["*"],
+                    "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"] By default, it is [\"*\"] and will be activated for all languages."
+                }
+            }
+        }
     },
     "scripts": {
         "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
