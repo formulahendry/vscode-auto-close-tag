@@ -30,9 +30,16 @@ By default, it is ["*"] and will be activated for all languages.
 ```
 
 ## Change Log
+### 0.0.3
+* Update README.md
+
 ### 0.0.2
 * Add configuration to set the languages that the extension will be activated
-* Add support for tag with attribute. e.g. <a href="https://www.microsoft.com"></a>, so </a> will be Automatically added.
+* Add support for tag with attribute. e.g. 
+```
+<a href="https://www.microsoft.com"></a>
+```
+So &lt;/a&gt; will be Automatically added.
 * Minor bug fix
 
 ### 0.0.1
