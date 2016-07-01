@@ -34,7 +34,7 @@ function insertCloseTag(event: vscode.TextDocumentChangeEvent): void {
     let textLine = editor.document.lineAt(selection.start);
     let originalPosition = selection.start.translate(0, 1);
     let text = textLine.text.substring(0, selection.start.character + 1);
-    let result = /<([a-zA-Z][a-zA-Z0-9]*)(?:\s[a-zA-Z0-9\s=":/\.]+)*>$/g.exec(text);
+    let result = /<([a-zA-Z][a-zA-Z0-9]*)(?:\s\S*[^\s/]+)*>$/g.exec(text);
     if (result !== null) {
         editor.edit((editBuilder) => {
             editBuilder.insert(originalPosition, "</" + result[1] + ">");

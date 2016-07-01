@@ -18,7 +18,7 @@ After typing in the closing bracket of the opening tag, the closing tag will be 
 ## Configuration
 
 Add entry into `auto-close-tag.activationOnLanguage` to set the languages that the extension will be activated.
-By default, it is ["*"] and will be activated for all languages.
+By default, it is `["*"]` and will be activated for all languages.
 ```json
 {
     "auto-close-tag.activationOnLanguage": [
@@ -30,16 +30,16 @@ By default, it is ["*"] and will be activated for all languages.
 ```
 
 ## Change Log
+### 0.1.0
+* Bug fixes
+* Add blog info 
+
 ### 0.0.3
 * Update README.md
 
 ### 0.0.2
 * Add configuration to set the languages that the extension will be activated
-* Add support for tag with attribute. e.g. 
-```
-<a href="https://www.microsoft.com"></a>
-```
-So &lt;/a&gt; will be Automatically added.
+* Add support for tag with attribute. e.g. `<a href="https://www.microsoft.com"></a>`. So `</a>` will be automatically added.
 * Minor bug fix
 
 ### 0.0.1
@@ -50,3 +50,6 @@ Submit the [issues](https://github.com/formulahendry/vscode-auto-close-tag/issue
 
 ## Contribution
 Fork the [repo](https://github.com/formulahendry/vscode-auto-close-tag) and submit pull requests.
+
+## Blog
+Visit the [blog](https://blogs.msdn.microsoft.com/formulahendry) or the [post](https://blogs.msdn.microsoft.com/formulahendry/2016/06/29/auto-close-tag-for-visual-studio-code/) for more detailed info 
