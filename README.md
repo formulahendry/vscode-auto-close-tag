@@ -2,7 +2,7 @@
 
 ![Marketplace Version](http://vsmarketplacebadge.apphb.com/version/formulahendry.auto-close-tag.svg) ![Installs](http://vsmarketplacebadge.apphb.com/installs/formulahendry.auto-close-tag.svg) ![Rating](http://vsmarketplacebadge.apphb.com/rating/formulahendry.auto-close-tag.svg)
 
-Automatically add close tag, same as Visual Studio IDE does.
+Automatically add HTML/XML close tag, same as Visual Studio IDE does.
 
 ## Features
 
@@ -30,6 +30,9 @@ By default, it is `["*"]` and will be activated for all languages.
 ```
 
 ## Change Log
+### 0.1.1
+* Match correct opening tag in some corner cases
+
 ### 0.1.0
 * Bug fixes
 * Add blog info 

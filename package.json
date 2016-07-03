@@ -1,8 +1,8 @@
 {
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
-    "description": "Automatically add close tag, same as Visual Studio IDE",
-    "version": "0.1.0",
+    "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE",
+    "version": "0.1.1",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
@@ -15,7 +15,9 @@
     ],
     "keywords": [
         "AutoComplete",
-        "CloseTag"
+        "CloseTag",
+        "html",
+        "xml"
     ],
     "bugs": {
         "url": "https://github.com/formulahendry/vscode-auto-close-tag/issues",
