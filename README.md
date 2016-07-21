@@ -1,6 +1,6 @@
 # Auto Close Tag
 
-![Marketplace Version](http://vsmarketplacebadge.apphb.com/version/formulahendry.auto-close-tag.svg) ![Installs](http://vsmarketplacebadge.apphb.com/installs/formulahendry.auto-close-tag.svg) ![Rating](http://vsmarketplacebadge.apphb.com/rating/formulahendry.auto-close-tag.svg)
+[![Marketplace Version](http://vsmarketplacebadge.apphb.com/version/formulahendry.auto-close-tag.svg)](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) [![Installs](http://vsmarketplacebadge.apphb.com/installs/formulahendry.auto-close-tag.svg)](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) [![Rating](http://vsmarketplacebadge.apphb.com/rating/formulahendry.auto-close-tag.svg)](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag) [![Build Status](https://travis-ci.org/formulahendry/vscode-auto-close-tag.svg?branch=master)](https://travis-ci.org/formulahendry/vscode-auto-close-tag)
 
 Automatically add HTML/XML close tag, same as Visual Studio IDE does.
 
@@ -24,12 +24,17 @@ By default, it is `["*"]` and will be activated for all languages.
     "auto-close-tag.activationOnLanguage": [
         "html",
         "xml",
-        "php"
+        "php",
+        "javascript"
     ]
 }
 ```
+**Note:** The setting should be set with language id defined in [VS Code](https://github.com/Microsoft/vscode/tree/master/extensions). Taking [javascript definition](https://github.com/Microsoft/vscode/blob/master/extensions/javascript/package.json) as an example, we need to use `javascript` for `.js` and `.es6`, use `javascriptreact` for `.jsx`. So, if you want to enable this extension on `.js` file, you need to add `javascript` in settings.json.
 
 ## Change Log
+### 0.1.2
+* Update README.md to clarify the configuration for `auto-close-tag.activationOnLanguage`
+
 ### 0.1.1
 * Match correct opening tag in some corner cases
 
