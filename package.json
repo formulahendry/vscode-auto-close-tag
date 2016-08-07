@@ -2,7 +2,7 @@
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
     "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
@@ -14,7 +14,8 @@
     ],
     "keywords": [
         "AutoComplete",
-        "CloseTag",
+        "close",
+        "tag",
         "html",
         "xml"
     ],
@@ -40,6 +41,11 @@
                     "type": "array",
                     "default": ["*"],
                     "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"] By default, it is [\"*\"] and will be activated for all languages."
+                },
+                "auto-close-tag.excludedTags": {
+                    "type": "array",
+                    "default": ["area", "base", "br", "col", "command", "embed", "hr", "img", "input", "keygen", "link", "meta", "param", "source", "track", "wbr"],
+                    "description": "Set the tag list that would not be auto closed."
                 }
             }
         }

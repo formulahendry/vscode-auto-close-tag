@@ -8,6 +8,7 @@ Automatically add HTML/XML close tag, same as Visual Studio IDE does.
 
 * Automatically add closing tag when you type in the closing bracket of the opening tag
 * After closing tag is inserted, the cursor is between the opening and closing tag
+* Set the tag list that would not be auto closed
 
 ## Usages
 
@@ -31,7 +32,34 @@ By default, it is `["*"]` and will be activated for all languages.
 ```
 **Note:** The setting should be set with language id defined in [VS Code](https://github.com/Microsoft/vscode/tree/master/extensions). Taking [javascript definition](https://github.com/Microsoft/vscode/blob/master/extensions/javascript/package.json) as an example, we need to use `javascript` for `.js` and `.es6`, use `javascriptreact` for `.jsx`. So, if you want to enable this extension on `.js` file, you need to add `javascript` in settings.json.
 
+You could also set the tag list that would not be auto closed. Below are the default settings for void elements in HTML per [W3C spec](https://www.w3.org/TR/html-markup/syntax.html#syntax-elements), and you could overwrite it:
+```json
+{
+    "auto-close-tag.excludedTags": [
+        "area",
+        "base",
+        "br",
+        "col",
+        "command",
+        "embed",
+        "hr",
+        "img",
+        "input",
+        "keygen",
+        "link",
+        "meta",
+        "param",
+        "source",
+        "track",
+        "wbr"
+    ]
+}
+```
+
 ## Change Log
+### 0.1.3
+* Resolve [GitHub issue#4](https://github.com/formulahendry/vscode-auto-close-tag/issues/4): providie a config entry to set the tag list that would not be auto closed
+
 ### 0.1.2
 * Update README.md to clarify the configuration for `auto-close-tag.activationOnLanguage`
 

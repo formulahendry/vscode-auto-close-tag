@@ -26,7 +26,7 @@ function insertCloseTag(event: vscode.TextDocumentChangeEvent): void {
     let languageId = editor.document.languageId;
     let config = vscode.workspace.getConfiguration('auto-close-tag');
     let languages = config.get<string[]>("activationOnLanguage", ["*"]);
-    if (languages.indexOf("*") === -1 && languages.lastIndexOf(languageId) === -1) {
+    if (languages.indexOf("*") === -1 && languages.indexOf(languageId) === -1) {
         return;
     }
 
@@ -36,11 +36,14 @@ function insertCloseTag(event: vscode.TextDocumentChangeEvent): void {
     let text = textLine.text.substring(0, selection.start.character + 1);
     let result = /<([a-zA-Z][a-zA-Z0-9]*)(?:\s[^\s<>]*?[^\s/<>]+?)*?>$/g.exec(text);
     if (result !== null) {
-        editor.edit((editBuilder) => {
-            editBuilder.insert(originalPosition, "</" + result[1] + ">");
-        }).then(() => {
-            editor.selection = new vscode.Selection(originalPosition, originalPosition);
-        });
+        let excludedTags = config.get<string[]>("excludedTags", []);
+        if (excludedTags.indexOf(result[1]) === -1) {
+            editor.edit((editBuilder) => {
+                editBuilder.insert(originalPosition, "</" + result[1] + ">");
+            }).then(() => {
+                editor.selection = new vscode.Selection(originalPosition, originalPosition);
+            });
+        }
     }
 
 }
