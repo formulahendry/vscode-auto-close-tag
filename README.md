@@ -57,6 +57,9 @@ You could also set the tag list that would not be auto closed. Below are the def
 ```
 
 ## Change Log
+### 0.1.4
+* Resolve [GitHub issue#5](https://github.com/formulahendry/vscode-auto-close-tag/issues/5): arrow function shouldn't trigger auto-close
+
 ### 0.1.3
 * Resolve [GitHub issue#4](https://github.com/formulahendry/vscode-auto-close-tag/issues/4): providie a config entry to set the tag list that would not be auto closed
 
