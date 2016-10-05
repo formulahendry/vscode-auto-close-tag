@@ -9,12 +9,25 @@ Automatically add HTML/XML close tag, same as Visual Studio IDE does.
 * Automatically add closing tag when you type in the closing bracket of the opening tag
 * After closing tag is inserted, the cursor is between the opening and closing tag
 * Set the tag list that would not be auto closed
+* Support auto close tag as Sublime Text 3
 
 ## Usages
 
 After typing in the closing bracket of the opening tag, the closing tag will be inserted automatically.
 
 ![Usage](images/usage.gif)
+
+## Sublime Text 3 Mode
+
+To automatically add close tag when `</` is typed (same as Sublime Text 3 does), set the below config as `true`:
+```json
+{
+    "auto-close-tag.SublimeText3Mode": true
+}
+```
+The setting is `false` by default.
+
+![Usage](images/st3.gif)
 
 ## Configuration
 
@@ -57,6 +70,9 @@ You could also set the tag list that would not be auto closed. Below are the def
 ```
 
 ## Change Log
+### 0.2.0
+* Add config entry to support auto close tag of Sublime Text 3 Mode
+
 ### 0.1.4
 * Resolve [GitHub issue#5](https://github.com/formulahendry/vscode-auto-close-tag/issues/5): arrow function shouldn't trigger auto-close
 

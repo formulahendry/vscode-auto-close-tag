@@ -2,7 +2,7 @@
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
     "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE",
-    "version": "0.1.4",
+    "version": "0.2.0",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
@@ -46,6 +46,11 @@
                     "type": "array",
                     "default": ["area", "base", "br", "col", "command", "embed", "hr", "img", "input", "keygen", "link", "meta", "param", "source", "track", "wbr"],
                     "description": "Set the tag list that would not be auto closed."
+                },
+                "auto-close-tag.SublimeText3Mode": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Auto close tag when </ is typed, same as Sublime Text 3"
                 }
             }
         }
