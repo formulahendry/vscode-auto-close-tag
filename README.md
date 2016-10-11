@@ -9,6 +9,7 @@ Automatically add HTML/XML close tag, same as Visual Studio IDE does.
 * Automatically add closing tag when you type in the closing bracket of the opening tag
 * After closing tag is inserted, the cursor is between the opening and closing tag
 * Set the tag list that would not be auto closed
+* Automatically close self-closing tag
 * Support auto close tag as Sublime Text 3
 * Use Keyboard Shortcut or Command Palette to add close tag manually
 
@@ -40,6 +41,13 @@ Use `auto-close-tag.enableAutoCloseTag` to set whether to insert close tag autom
 ```json
 {
     "auto-close-tag.enableAutoCloseTag": true
+}
+```
+
+To set whether to close self-closing tag automatically (e.g. type `<br`, then type `/`, `>` will be added automatically) (it is `true` by default):
+```json
+{
+    "auto-close-tag.enableAutoCloseSelfClosingTag": true
 }
 ```
 
@@ -82,6 +90,9 @@ You could also set the tag list that would not be auto closed. Below are the def
 ```
 
 ## Change Log
+### 0.3.1
+* Add support to close self-closing tag automatically
+
 ### 0.3.0
 * Use Keyboard Shortcut or Command Palette to add close tag manually
 * Add config entry to turn on/off auto close tag

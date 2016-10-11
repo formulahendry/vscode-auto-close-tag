@@ -62,14 +62,20 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
     } else {
         let textLine = editor.document.lineAt(selection.start);
         let text = textLine.text.substring(0, selection.start.character + 1);
-        let result = /<([a-zA-Z][a-zA-Z0-9]*)(?:\s[^\s<>]*?[^\s/<>=]+?)*?>$/.exec(text);
+        let result = /<([a-zA-Z][a-zA-Z0-9]*)(?:\s[^\s<>]*?[^\s/<>=]+?)*?(\s?\/|>)$/.exec(text);
         if (result !== null) {
-            if (excludedTags.indexOf(result[1]) === -1) {
+            if (result[2] === ">") {
+                if (excludedTags.indexOf(result[1]) === -1) {
+                    editor.edit((editBuilder) => {
+                        editBuilder.insert(originalPosition, "</" + result[1] + ">");
+                    }).then(() => {
+                        editor.selection = new vscode.Selection(originalPosition, originalPosition);
+                    });
+                }
+            } else if (config.get<boolean>("enableAutoCloseSelfClosingTag", true)) {
                 editor.edit((editBuilder) => {
-                    editBuilder.insert(originalPosition, "</" + result[1] + ">");
-                }).then(() => {
-                    editor.selection = new vscode.Selection(originalPosition, originalPosition);
-                });
+                    editBuilder.insert(originalPosition, ">");
+                })
             }
         }
     }

@@ -2,7 +2,7 @@
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
     "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
@@ -68,6 +68,11 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Whether to insert close tag automatically"
+                },
+                "auto-close-tag.enableAutoCloseSelfClosingTag": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Whether to close self-closing tag automatically"
                 }
             }
         }
