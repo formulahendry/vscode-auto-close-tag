@@ -90,6 +90,9 @@ You could also set the tag list that would not be auto closed. Below are the def
 ```
 
 ## Change Log
+### 0.3.2
+* Resolve [GitHub issue#10](https://github.com/formulahendry/vscode-auto-close-tag/issues/10): add support to close self-closing tag automatically in Sublime Text 3 mode
+
 ### 0.3.1
 * Add support to close self-closing tag automatically
 

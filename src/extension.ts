@@ -44,8 +44,9 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
     let originalPosition = selection.start.translate(0, 1);
     let excludedTags = config.get<string[]>("excludedTags", []);
     let isSublimeText3Mode = config.get<boolean>("SublimeText3Mode", false);
+    let enableAutoCloseSelfClosingTag = config.get<boolean>("enableAutoCloseSelfClosingTag", true);
 
-    if (isSublimeText3Mode) {
+    if (isSublimeText3Mode && event.contentChanges[0].text === "/") {
         let text = editor.document.getText(new vscode.Range(new vscode.Position(0, 0), originalPosition));
         let last2chars = "";
         if (text.length > 2) {
@@ -59,7 +60,10 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
                 });
             }
         }
-    } else {
+    }
+
+    if ((!isSublimeText3Mode && event.contentChanges[0].text === ">") ||
+        (enableAutoCloseSelfClosingTag && event.contentChanges[0].text === "/")) {
         let textLine = editor.document.lineAt(selection.start);
         let text = textLine.text.substring(0, selection.start.character + 1);
         let result = /<([a-zA-Z][a-zA-Z0-9]*)(?:\s[^\s<>]*?[^\s/<>=]+?)*?(\s?\/|>)$/.exec(text);
@@ -72,7 +76,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
                         editor.selection = new vscode.Selection(originalPosition, originalPosition);
                     });
                 }
-            } else if (config.get<boolean>("enableAutoCloseSelfClosingTag", true)) {
+            } else {
                 editor.edit((editBuilder) => {
                     editBuilder.insert(originalPosition, ">");
                 })
