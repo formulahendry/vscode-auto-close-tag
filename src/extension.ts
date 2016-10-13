@@ -2,7 +2,6 @@
 import * as vscode from 'vscode';
 
 export function activate(context: vscode.ExtensionContext) {
-    console.log('Congratulations, your extension "auto-close-tag" is now active!');
 
     vscode.workspace.onDidChangeTextDocument(event => {
         insertAutoCloseTag(event);
