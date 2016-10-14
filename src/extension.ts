@@ -74,7 +74,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
                         editor.selection = new vscode.Selection(originalPosition, originalPosition);
                     });
                 }
-            } else {
+            } else if ((occurrenceCount(result[0], "'") % 2 === 0) && (occurrenceCount(result[0], "\"") % 2 === 0)) {
                 editor.edit((editBuilder) => {
                     editBuilder.insert(originalPosition, ">");
                 })
@@ -84,7 +84,6 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
 }
 
 function insertCloseTag(): void {
-    console.log('close!!')
     let editor = vscode.window.activeTextEditor;
     if (!editor) {
         return;
@@ -136,3 +135,7 @@ function getCloseTag(text: string, excludedTags: string[]): string {
         return null;
     }
 }
+
+function occurrenceCount(source: string, find: string): number {
+    return source.split(find).length - 1;
+} 

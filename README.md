@@ -90,6 +90,9 @@ You could also set the tag list that would not be auto closed. Below are the def
 ```
 
 ## Change Log
+### 0.3.4
+* Resolve [GitHub issue#12](https://github.com/formulahendry/vscode-auto-close-tag/issues/12): Path symbol "/" problem
+
 ### 0.3.3
 * Merge [PR#11](https://github.com/formulahendry/vscode-auto-close-tag/pull/11): Remove left over console.log command
 
