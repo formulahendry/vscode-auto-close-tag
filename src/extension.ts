@@ -54,15 +54,17 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
             let closeTag = getCloseTag(text, excludedTags);
             if (closeTag) {
                 let nextChar = getNextChar(editor, originalPosition);
-                if(nextChar === ">")
+                if(nextChar === ">"){
                     closeTag = closeTag.substr(0, closeTag.length - 1);
+                }
                 editor.edit((editBuilder) => {
                     editBuilder.insert(originalPosition, closeTag);
+                }).then(()=>{
+                    if(nextChar === ">"){
+                        // Since we only added tag body we need to move out from brackets
+                        editor.selection = moveSelectionRight(editor.selection, closeTag.length +1);
+                    }
                 });
-                if(nextChar === ">")
-                    // editor.selection points to the / symbol
-                    // We count / + tag + >  =  closeTag.length+2
-                    editor.selection = moveSelectionRight(editor.selection, closeTag.length +2);
             }
         }
     }
@@ -111,7 +113,7 @@ function insertCloseTag(): void {
     }
 }
 
-function getNextChar(editor:vscode.TextEditor, position: vscode.Position):string{
+function getNextChar(editor: vscode.TextEditor, position: vscode.Position): string {
     let next_position = position.translate(0, 1);
     let text = editor.document.getText(new vscode.Range(position, next_position));
     return text;
@@ -149,10 +151,10 @@ function getCloseTag(text: string, excludedTags: string[]): string {
     }
 }
 
-function moveSelectionRight(selection: vscode.Selection, shift:number):vscode.Selection{
-    let new_position = selection.active.translate(0, shift);
-    let new_selection = new vscode.Selection(new_position, new_position);
-    return new_selection;
+function moveSelectionRight(selection: vscode.Selection, shift: number): vscode.Selection {
+    let newPosition = selection.active.translate(0, shift);
+    let newSelection = new vscode.Selection(newPosition, newPosition);
+    return newSelection;
 }
 
 function occurrenceCount(source: string, find: string): number {
