@@ -54,15 +54,14 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
             let closeTag = getCloseTag(text, excludedTags);
             if (closeTag) {
                 let nextChar = getNextChar(editor, originalPosition);
-                if(nextChar === ">"){
+                if (nextChar === ">") {
                     closeTag = closeTag.substr(0, closeTag.length - 1);
                 }
                 editor.edit((editBuilder) => {
                     editBuilder.insert(originalPosition, closeTag);
-                }).then(()=>{
-                    if(nextChar === ">"){
-                        // Since we only added tag body we need to move out from brackets
-                        editor.selection = moveSelectionRight(editor.selection, closeTag.length +1);
+                }).then(() => {
+                    if (nextChar === ">") {
+                        editor.selection = moveSelectionRight(editor.selection, 1);
                     }
                 });
             }
@@ -114,8 +113,8 @@ function insertCloseTag(): void {
 }
 
 function getNextChar(editor: vscode.TextEditor, position: vscode.Position): string {
-    let next_position = position.translate(0, 1);
-    let text = editor.document.getText(new vscode.Range(position, next_position));
+    let nextPosition = position.translate(0, 1);
+    let text = editor.document.getText(new vscode.Range(position, nextPosition));
     return text;
 }
 
