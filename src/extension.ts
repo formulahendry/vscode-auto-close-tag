@@ -53,8 +53,17 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         if (last2chars === "</") {
             let closeTag = getCloseTag(text, excludedTags);
             if (closeTag) {
+                let nextChar = getNextChar(editor, originalPosition);
+                if(nextChar === ">"){
+                    closeTag = closeTag.substr(0, closeTag.length - 1);
+                }
                 editor.edit((editBuilder) => {
                     editBuilder.insert(originalPosition, closeTag);
+                }).then(()=>{
+                    if(nextChar === ">"){
+                        // Since we only added tag body we need to move out from brackets
+                        editor.selection = moveSelectionRight(editor.selection, closeTag.length +1);
+                    }
                 });
             }
         }
@@ -64,7 +73,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         (enableAutoCloseSelfClosingTag && event.contentChanges[0].text === "/")) {
         let textLine = editor.document.lineAt(selection.start);
         let text = textLine.text.substring(0, selection.start.character + 1);
-        let result = /<([a-zA-Z][a-zA-Z0-9]*)(?:\s[^\s<>]*?[^\s/<>=]+?)*?(\s?\/|>)$/.exec(text);
+        let result = /<([a-zA-Z][a-zA-Z0-9:\-_]*)(?:\s+[^<>]*?[^\s/<>=]+?)*?(\s?\/|>)$/.exec(text);
         if (result !== null) {
             if (result[2] === ">") {
                 if (excludedTags.indexOf(result[1]) === -1) {
@@ -104,8 +113,14 @@ function insertCloseTag(): void {
     }
 }
 
+function getNextChar(editor: vscode.TextEditor, position: vscode.Position): string {
+    let next_position = position.translate(0, 1);
+    let text = editor.document.getText(new vscode.Range(position, next_position));
+    return text;
+}
+
 function getCloseTag(text: string, excludedTags: string[]): string {
-    let regex = /<(\/?[a-zA-Z][a-zA-Z0-9]*)(?:\s[^\s<>]*?[^\s/<>=]+?)*?>/g;
+    let regex = /<(\/?[a-zA-Z][a-zA-Z0-9:\-_]*)(?:\s+[^<>]*?[^\s/<>=]+?)*?>/g;
     let result = null;
     let stack = [];
     while ((result = regex.exec(text)) !== null) {
@@ -134,6 +149,12 @@ function getCloseTag(text: string, excludedTags: string[]): string {
     } else {
         return null;
     }
+}
+
+function moveSelectionRight(selection: vscode.Selection, shift: number): vscode.Selection {
+    let newPosition = selection.active.translate(0, shift);
+    let newSelection = new vscode.Selection(newPosition, newPosition);
+    return newSelection;
 }
 
 function occurrenceCount(source: string, find: string): number {
