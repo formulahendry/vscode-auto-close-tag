@@ -1,3 +1,6 @@
+### 0.3.6
+* Resolve [GitHub issue#18](https://github.com/formulahendry/vscode-auto-close-tag/issues/18): Support `.` (dot) in tags
+
 ### 0.3.5
 * Merge [PR #15](https://github.com/formulahendry/vscode-auto-close-tag/pull/15)
   * Avoid closing brackets duplication
