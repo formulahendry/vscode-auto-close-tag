@@ -18,7 +18,8 @@ export function deactivate() {
 }
 
 function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
-    if (event.contentChanges[0].text !== ">" && event.contentChanges[0].text !== "/") {
+    let isRightAngleBracket = CheckRightAngleBracket(event.contentChanges[0]);
+    if (!isRightAngleBracket && event.contentChanges[0].text !== "/") {
         return;
     }
 
@@ -68,7 +69,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         }
     }
 
-    if ((!isSublimeText3Mode && event.contentChanges[0].text === ">") ||
+    if ((!isSublimeText3Mode && isRightAngleBracket) ||
         (enableAutoCloseSelfClosingTag && event.contentChanges[0].text === "/")) {
         let textLine = editor.document.lineAt(selection.start);
         let text = textLine.text.substring(0, selection.start.character + 1);
@@ -89,6 +90,15 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
             }
         }
     }
+}
+
+function CheckRightAngleBracket(contentChange: vscode.TextDocumentContentChangeEvent): boolean {
+    return contentChange.text === ">" || CheckRightAngleBracketInVSCode_1_8(contentChange);
+}
+
+function CheckRightAngleBracketInVSCode_1_8(contentChange: vscode.TextDocumentContentChangeEvent): boolean {
+    return contentChange.text.endsWith(">") && contentChange.range.start.character === 0
+        && contentChange.range.start.line === contentChange.range.end.line;
 }
 
 function insertCloseTag(): void {
