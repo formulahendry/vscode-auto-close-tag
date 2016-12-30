@@ -1,3 +1,6 @@
+### 0.3.8
+* Resolve [GitHub issue#20](https://github.com/formulahendry/vscode-auto-close-tag/issues/20): Fix automatic close tag after tab switch
+
 ### 0.3.7
 * Resolve [GitHub issue#19](https://github.com/formulahendry/vscode-auto-close-tag/issues/19): Fix Auto Close Tag not working in HTML/XML file due to VS Code 1.8 breaking changes
 

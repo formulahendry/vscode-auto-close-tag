@@ -98,7 +98,8 @@ function CheckRightAngleBracket(contentChange: vscode.TextDocumentContentChangeE
 
 function CheckRightAngleBracketInVSCode_1_8(contentChange: vscode.TextDocumentContentChangeEvent): boolean {
     return contentChange.text.endsWith(">") && contentChange.range.start.character === 0
-        && contentChange.range.start.line === contentChange.range.end.line;
+        && contentChange.range.start.line === contentChange.range.end.line
+        && !contentChange.range.end.isEqual(new vscode.Position(0, 0));
 }
 
 function insertCloseTag(): void {
