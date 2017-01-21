@@ -19,7 +19,7 @@ After typing in the closing bracket of the opening tag, the closing tag will be 
 
 ![Usage](images/usage.gif)
 
-To add close tag manually, use shortcut `Ctrl+Alt+.`, or press `F1` and then select/type `Close Tag`
+To add close tag manually, use shortcut `Alt+.` (`Command+Alt+.` for Mac), or press `F1` and then select/type `Close Tag`
 
 ![Usage](images/close-tag.gif)
 

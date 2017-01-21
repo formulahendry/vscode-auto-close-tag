@@ -1,3 +1,7 @@
+### 0.3.9
+* Update key binding to align with Sublime Text
+* Resolve [GitHub issue#23](https://github.com/formulahendry/vscode-auto-close-tag/issues/23): Tag should not be auto closed inside quotes
+
 ### 0.3.8
 * Resolve [GitHub issue#20](https://github.com/formulahendry/vscode-auto-close-tag/issues/20): Fix automatic close tag after tab switch
 
