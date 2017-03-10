@@ -1,3 +1,6 @@
+### 0.3.10 (2017-03-10)
+* Resolve [GitHub issue#30](https://github.com/formulahendry/vscode-auto-close-tag/issues/30): Should not close tag inside template literals
+
 ### 0.3.9
 * Update key binding to align with Sublime Text
 * Resolve [GitHub issue#23](https://github.com/formulahendry/vscode-auto-close-tag/issues/23): Tag should not be auto closed inside quotes

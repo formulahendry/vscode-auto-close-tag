@@ -74,7 +74,8 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         let textLine = editor.document.lineAt(selection.start);
         let text = textLine.text.substring(0, selection.start.character + 1);
         let result = /<([a-zA-Z][a-zA-Z0-9:\-_.]*)(?:\s+[^<>]*?[^\s/<>=]+?)*?(\s?\/|>)$/.exec(text);
-        if (result !== null && ((occurrenceCount(result[0], "'") % 2 === 0) && (occurrenceCount(result[0], "\"") % 2 === 0))) {
+        if (result !== null && ((occurrenceCount(result[0], "'") % 2 === 0)
+            && (occurrenceCount(result[0], "\"") % 2 === 0) && (occurrenceCount(result[0], "`") % 2 === 0))) {
             if (result[2] === ">") {
                 if (excludedTags.indexOf(result[1]) === -1) {
                     editor.edit((editBuilder) => {
