@@ -44,8 +44,9 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
     let excludedTags = config.get<string[]>("excludedTags", []);
     let isSublimeText3Mode = config.get<boolean>("SublimeText3Mode", false);
     let enableAutoCloseSelfClosingTag = config.get<boolean>("enableAutoCloseSelfClosingTag", true);
+    let isFullMode = config.get<boolean>("fullMode");
 
-    if (isSublimeText3Mode && event.contentChanges[0].text === "/") {
+    if ((isSublimeText3Mode || isFullMode) && event.contentChanges[0].text === "/") {
         let text = editor.document.getText(new vscode.Range(new vscode.Position(0, 0), originalPosition));
         let last2chars = "";
         if (text.length > 2) {
@@ -69,7 +70,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         }
     }
 
-    if ((!isSublimeText3Mode && isRightAngleBracket) ||
+    if (((!isSublimeText3Mode || isFullMode) && isRightAngleBracket) ||
         (enableAutoCloseSelfClosingTag && event.contentChanges[0].text === "/")) {
         let textLine = editor.document.lineAt(selection.start);
         let text = textLine.text.substring(0, selection.start.character + 1);

@@ -1,3 +1,6 @@
+### 0.3.11 (2017-04-16)
+* Resolve [GitHub issue#33](https://github.com/formulahendry/vscode-auto-close-tag/issues/33): Add config entry to enable both Visual Studio and Sublime Text mode
+
 ### 0.3.10 (2017-03-10)
 * Resolve [GitHub issue#30](https://github.com/formulahendry/vscode-auto-close-tag/issues/30): Should not close tag inside template literals
 

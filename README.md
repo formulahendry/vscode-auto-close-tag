@@ -89,6 +89,8 @@ You could also set the tag list that would not be auto closed. Below are the def
 }
 ```
 
+`auto-close-tag.fullMode`: Whether to enable both Visual Studio and Sublime Text mode. (Default is **false**)
+
 ## Change Log
 See Change Log [here](CHANGELOG.md)
 
