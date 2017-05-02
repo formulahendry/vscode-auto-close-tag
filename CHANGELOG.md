@@ -1,3 +1,6 @@
+### 0.3.12 (2017-05-02)
+* Remove 'Keymaps' category per VS Code team's suggestion
+
 ### 0.3.11 (2017-04-16)
 * Resolve [GitHub issue#33](https://github.com/formulahendry/vscode-auto-close-tag/issues/33): Add config entry to enable both Visual Studio and Sublime Text mode
 
