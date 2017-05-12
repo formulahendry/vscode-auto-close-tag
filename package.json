@@ -2,7 +2,7 @@
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
     "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text",
-    "version": "0.3.12",
+    "version": "0.4.0",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
@@ -52,8 +52,20 @@
             "properties": {
                 "auto-close-tag.activationOnLanguage": {
                     "type": "array",
-                    "default": ["*"],
-                    "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"] By default, it is [\"*\"] and will be activated for all languages."
+                    "default": [
+                        "html",
+                        "xml",
+                        "php",
+                        "javascript",
+                        "javascriptreact",
+                        "typescript",
+                        "typescriptreact",
+                        "plaintext",
+                        "markdown",
+                        "razor",
+                        "vue"
+                    ],
+                    "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages."
                 },
                 "auto-close-tag.excludedTags": {
                     "type": "array",

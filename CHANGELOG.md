@@ -1,3 +1,6 @@
+### 0.4.0 (2017-05-12)
+* [#26](https://github.com/formulahendry/vscode-auto-close-tag/issues/26): Enable Auto Close Tag only on a set of languages
+
 ### 0.3.12 (2017-05-02)
 * Remove 'Keymaps' category per VS Code team's suggestion
 

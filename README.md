@@ -51,15 +51,21 @@ To set whether to close self-closing tag automatically (e.g. type `<br`, then ty
 }
 ```
 
-Add entry into `auto-close-tag.activationOnLanguage` to set the languages that the extension will be activated.
-By default, it is `["*"]` and will be activated for all languages.
+Add entry into `auto-close-tag.activationOnLanguage` to set the languages that the extension will be activated. Use `["*"]` to activate for all languages. Below are the default settings:
 ```json
 {
     "auto-close-tag.activationOnLanguage": [
         "html",
         "xml",
         "php",
-        "javascript"
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact",
+        "plaintext",
+        "markdown",
+        "razor",
+        "vue"
     ]
 }
 ```
