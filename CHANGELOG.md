@@ -1,3 +1,6 @@
+### 0.4.1 (2017-05-14)
+* Enable Auto Close Tag on more template engines
+
 ### 0.4.0 (2017-05-12)
 * [#26](https://github.com/formulahendry/vscode-auto-close-tag/issues/26): Enable Auto Close Tag only on a set of languages
 
