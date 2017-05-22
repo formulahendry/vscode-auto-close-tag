@@ -1,3 +1,6 @@
+### 0.4.2 (2017-05-22)
+* [#46](https://github.com/formulahendry/vscode-auto-close-tag/issues/46): Enable Auto Close Tag on Liquid
+
 ### 0.4.1 (2017-05-14)
 * Enable Auto Close Tag on more template engines
 
