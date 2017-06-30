@@ -18,6 +18,9 @@ export function deactivate() {
 }
 
 function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
+    if (!event.contentChanges[0]) {
+        return;
+    }
     let isRightAngleBracket = CheckRightAngleBracket(event.contentChanges[0]);
     if (!isRightAngleBracket && event.contentChanges[0].text !== "/") {
         return;
