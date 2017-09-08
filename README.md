@@ -4,6 +4,10 @@
 
 Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text does.
 
+## Note
+
+From VS Code 1.16, it has [built-in close tag support](https://code.visualstudio.com/updates/v1_16#_html-close-tags) for HTML, Handlebars and Razor files. This extension is enabled for other languages like XML, PHP, Vue, JavaScript, TypeScript, JSX, TSX and so on. It is configurable.
+
 ## Features
 
 * Automatically add closing tag when you type in the closing bracket of the opening tag
@@ -55,17 +59,19 @@ Add entry into `auto-close-tag.activationOnLanguage` to set the languages that t
 ```json
 {
     "auto-close-tag.activationOnLanguage": [
-        "html",
         "xml",
         "php",
+        "blade",
+        "ejs",
+        "jinja",
         "javascript",
         "javascriptreact",
         "typescript",
         "typescriptreact",
         "plaintext",
         "markdown",
-        "razor",
-        "vue"
+        "vue",
+        "liquid"
     ]
 }
 ```
