@@ -1,3 +1,6 @@
+### 0.5.1 (2017-09-29)
+* [#63](https://github.com/formulahendry/vscode-auto-close-tag/issues/63): Handle space before closing parentheses
+
 ### 0.5.0 (2017-09-08)
 * Not enabled for HTML, Handlebars and Razor files, since VS Code has built-in support from v1.16
 
