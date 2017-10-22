@@ -29,7 +29,8 @@
         "url": "https://github.com/formulahendry/vscode-auto-close-tag.git"
     },
     "activationEvents": [
-        "*"
+        "*",
+        "onCommand:auto-close-tag.closeTag"
     ],
     "main": "./out/src/extension",
     "contributes": {
