@@ -71,7 +71,8 @@ Add entry into `auto-close-tag.activationOnLanguage` to set the languages that t
         "plaintext",
         "markdown",
         "vue",
-        "liquid"
+        "liquid",
+        "erb"
     ]
 }
 ```

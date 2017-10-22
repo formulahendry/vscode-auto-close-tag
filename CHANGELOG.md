@@ -1,3 +1,6 @@
+### 0.5.2 (2017-10-22)
+* [#65](https://github.com/formulahendry/vscode-auto-close-tag/issues/65): Enable Auto Close Tag on erb file
+
 ### 0.5.1 (2017-09-29)
 * [#63](https://github.com/formulahendry/vscode-auto-close-tag/issues/63): Handle space before closing parentheses
 
