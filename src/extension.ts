@@ -26,13 +26,13 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         return;
     }
 
-    let config = vscode.workspace.getConfiguration('auto-close-tag');
-    if (!config.get<boolean>("enableAutoCloseTag", true)) {
+    let editor = vscode.window.activeTextEditor;
+    if (!editor) {
         return;
     }
 
-    let editor = vscode.window.activeTextEditor;
-    if (!editor) {
+    let config = vscode.workspace.getConfiguration('auto-close-tag', editor.document.uri);
+    if (!config.get<boolean>("enableAutoCloseTag", true)) {
         return;
     }
 
@@ -115,7 +115,7 @@ function insertCloseTag(): void {
 
     let selection = editor.selection;
     let originalPosition = selection.start;
-    let config = vscode.workspace.getConfiguration('auto-close-tag');
+    let config = vscode.workspace.getConfiguration('auto-close-tag', editor.document.uri);
     let excludedTags = config.get<string[]>("excludedTags", []);
     let text = editor.document.getText(new vscode.Range(new vscode.Position(0, 0), originalPosition));
     if (text.length > 2) {

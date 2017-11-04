@@ -2,7 +2,7 @@
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
     "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text",
-    "version": "0.5.2",
+    "version": "0.5.3",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
@@ -17,7 +17,8 @@
         "close",
         "tag",
         "html",
-        "xml"
+        "xml",
+        "multi-root ready"
     ],
     "bugs": {
         "url": "https://github.com/formulahendry/vscode-auto-close-tag/issues",
@@ -69,32 +70,38 @@
                         "liquid",
                         "erb"
                     ],
-                    "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages."
+                    "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages.",
+                    "scope": "resource"
                 },
                 "auto-close-tag.excludedTags": {
                     "type": "array",
                     "default": ["area", "base", "br", "col", "command", "embed", "hr", "img", "input", "keygen", "link", "meta", "param", "source", "track", "wbr"],
-                    "description": "Set the tag list that would not be auto closed."
+                    "description": "Set the tag list that would not be auto closed.",
+                    "scope": "resource"
                 },
                 "auto-close-tag.SublimeText3Mode": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Auto close tag when </ is typed, same as Sublime Text 3"
+                    "description": "Auto close tag when </ is typed, same as Sublime Text 3",
+                    "scope": "resource"
                 },
                 "auto-close-tag.enableAutoCloseTag": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Whether to insert close tag automatically"
+                    "description": "Whether to insert close tag automatically",
+                    "scope": "resource"
                 },
                 "auto-close-tag.enableAutoCloseSelfClosingTag": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Whether to close self-closing tag automatically"
+                    "description": "Whether to close self-closing tag automatically",
+                    "scope": "resource"
                 },
                 "auto-close-tag.fullMode": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Enable both Visual Studio and Sublime Text mode"
+                    "description": "Enable both Visual Studio and Sublime Text mode",
+                    "scope": "resource"
                 }
             }
         }

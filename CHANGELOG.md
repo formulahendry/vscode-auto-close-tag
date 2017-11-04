@@ -1,3 +1,6 @@
+### 0.5.3 (2017-11-04)
+* Add support for Multi Root Workspace
+
 ### 0.5.2 (2017-10-22)
 * [#65](https://github.com/formulahendry/vscode-auto-close-tag/issues/65): Enable Auto Close Tag on erb file
 
