@@ -1,3 +1,6 @@
+### 0.5.4 (2017-11-30)
+* Add support for CFML
+
 ### 0.5.3 (2017-11-04)
 * Add support for Multi Root Workspace
 

@@ -72,7 +72,9 @@ Add entry into `auto-close-tag.activationOnLanguage` to set the languages that t
         "markdown",
         "vue",
         "liquid",
-        "erb"
+        "erb",
+        "lang-cfml",
+        "cfml"
     ]
 }
 ```
