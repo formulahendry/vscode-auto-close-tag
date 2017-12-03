@@ -1,3 +1,6 @@
+### 0.5.5 (2017-12-03)
+* Handle void tags that are written in other case than lowercase (HTML tag names are case-insensitive)
+
 ### 0.5.4 (2017-11-30)
 * Add support for CFML
 
