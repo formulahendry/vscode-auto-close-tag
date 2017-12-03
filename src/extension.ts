@@ -81,7 +81,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         if (result !== null && ((occurrenceCount(result[0], "'") % 2 === 0)
             && (occurrenceCount(result[0], "\"") % 2 === 0) && (occurrenceCount(result[0], "`") % 2 === 0))) {
             if (result[2] === ">") {
-                if (excludedTags.indexOf(result[1]) === -1) {
+                if (excludedTags.indexOf(result[1].toLowerCase()) === -1) {
                     editor.edit((editBuilder) => {
                         editBuilder.insert(originalPosition, "</" + result[1] + ">");
                     }).then(() => {
@@ -141,7 +141,7 @@ function getCloseTag(text: string, excludedTags: string[]): string {
     while ((result = regex.exec(text)) !== null) {
         let isStartTag = result[1].substr(0, 1) !== "/";
         let tag = isStartTag ? result[1] : result[1].substr(1);
-        if (excludedTags.indexOf(tag) === -1) {
+        if (excludedTags.indexOf(tag.toLowerCase()) === -1) {
             if (isStartTag) {
                 stack.push(tag);
             } else if (stack.length > 0) {
