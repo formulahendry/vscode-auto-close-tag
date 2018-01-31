@@ -74,7 +74,8 @@ Add entry into `auto-close-tag.activationOnLanguage` to set the languages that t
         "liquid",
         "erb",
         "lang-cfml",
-        "cfml"
+        "cfml",
+        "HTML (Eex)"
     ]
 }
 ```

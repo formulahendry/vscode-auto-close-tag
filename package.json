@@ -70,7 +70,8 @@
                         "liquid",
                         "erb",
                         "lang-cfml",
-                        "cfml"
+                        "cfml",
+                        "HTML (Eex)"
                     ],
                     "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages.",
                     "scope": "resource"
