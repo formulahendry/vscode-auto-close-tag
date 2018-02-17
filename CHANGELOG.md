@@ -1,3 +1,6 @@
+### 0.5.6 (2018-02-17)
+* Add support for embedded elixir
+
 ### 0.5.5 (2017-12-03)
 * Handle void tags that are written in other case than lowercase (HTML tag names are case-insensitive)
 

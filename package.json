@@ -2,7 +2,7 @@
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
     "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text",
-    "version": "0.5.5",
+    "version": "0.5.6",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
