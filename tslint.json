@@ -1,0 +1,15 @@
+{
+    "rules": {
+        "indent": true,
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ],
+        "triple-equals": true,
+        "semicolon": [
+            true,
+            "always"
+        ]
+    }
+}
