@@ -89,9 +89,11 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
                     });
                 }
             } else {
-                editor.edit((editBuilder) => {
-                    editBuilder.insert(originalPosition, ">");
-                })
+                if (textLine.text.length <= selection.start.character + 1 || textLine.text[selection.start.character + 1] !== '>') { // if not typing "/" just before ">", add the ">" after "/"
+                    editor.edit((editBuilder) => {
+                        editBuilder.insert(originalPosition, ">");
+                    })
+                }
             }
         }
     }
