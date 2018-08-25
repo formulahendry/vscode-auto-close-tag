@@ -29,13 +29,12 @@ To add close tag manually, use shortcut `Alt+.` (`Command+Alt+.` for Mac), or pr
 
 ## Sublime Text 3 Mode
 
-To automatically add close tag when `</` is typed (same as Sublime Text 3 does), set the below config as `true`:
+To automatically add close tag when `</` is typed (same as Sublime Text 3 does), set the below config as `true` (the setting is `false` by default):
 ```json
 {
     "auto-close-tag.SublimeText3Mode": true
 }
 ```
-The setting is `false` by default.
 
 ![Sublime Text 3](images/st3.gif)
 
