@@ -77,7 +77,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         (enableAutoCloseSelfClosingTag && event.contentChanges[0].text === "/")) {
         let textLine = editor.document.lineAt(selection.start);
         let text = textLine.text.substring(0, selection.start.character + 1);
-        let result = /<([a-zA-Z][a-zA-Z0-9:\-_.]*)(?:\s+[^<>]*?[^\s/<>=]+?)*?\s?(\/|>)$/.exec(text);
+        let result = /<([_a-zA-Z][a-zA-Z0-9:\-_.]*)(?:\s+[^<>]*?[^\s/<>=]+?)*?\s?(\/|>)$/.exec(text);
         if (result !== null && ((occurrenceCount(result[0], "'") % 2 === 0)
             && (occurrenceCount(result[0], "\"") % 2 === 0) && (occurrenceCount(result[0], "`") % 2 === 0))) {
             if (result[2] === ">") {
@@ -137,7 +137,7 @@ function getNextChar(editor: vscode.TextEditor, position: vscode.Position): stri
 }
 
 function getCloseTag(text: string, excludedTags: string[]): string {
-    let regex = /<(\/?[a-zA-Z][a-zA-Z0-9:\-_.]*)(?:\s+[^<>]*?[^\s/<>=]+?)*?\s?>/g;
+    let regex = /<(\/?[_a-zA-Z][a-zA-Z0-9:\-_.]*)(?:\s+[^<>]*?[^\s/<>=]+?)*?\s?>/g;
     let result = null;
     let stack = [];
     while ((result = regex.exec(text)) !== null) {
