@@ -66,6 +66,7 @@
                         "typescriptreact",
                         "plaintext",
                         "markdown",
+                        "mdx",
                         "vue",
                         "liquid",
                         "erb",
