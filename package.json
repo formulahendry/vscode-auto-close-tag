@@ -71,7 +71,7 @@
                         "erb",
                         "lang-cfml",
                         "cfml",
-                        "HTML (Eex)"
+                        "HTML (EEx)"
                     ],
                     "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages.",
                     "scope": "resource"
