@@ -4,6 +4,12 @@
 
 Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text does.
 
+## Sponsors
+
+<p><a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=autoclosetag&amp;utm_medium=banner"><img src="https://alt-images.codestream.com/codestream_logo_autoclosetag.png"></a><br>
+Request and perform code reviews from inside your IDE.  Review any code, even if it's a work-in-progress that hasn't been committed yet, and use jump-to-definition, your favorite keybindings, and other IDE tools.<br> <a title="Try CodeStream" href="https://sponsorlink.codestream.com/?utm_source=vscmarket&amp;utm_campaign=autoclosetag&amp;utm_medium=banner">Try it free</a></p>
+
+
 ## Note
 
 From VS Code 1.16, it has [built-in close tag support](https://code.visualstudio.com/updates/v1_16#_html-close-tags) for HTML, Handlebars and Razor files. This extension is enabled for other languages like XML, PHP, Vue, JavaScript, TypeScript, JSX, TSX and so on. It is configurable.

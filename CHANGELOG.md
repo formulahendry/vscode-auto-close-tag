@@ -1,3 +1,7 @@
+### 0.5.7 (2020-04-21)
+* Update support for embedded elixir
+* Add support for Apple's property list type (plist)
+
 ### 0.5.6 (2018-02-17)
 * Add support for embedded elixir
 

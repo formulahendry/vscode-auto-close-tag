@@ -2,7 +2,7 @@
     "name": "auto-close-tag",
     "displayName": "Auto Close Tag",
     "description": "Automatically add HTML/XML close tag, same as Visual Studio IDE or Sublime Text",
-    "version": "0.5.6",
+    "version": "0.5.7",
     "publisher": "formulahendry",
     "icon": "images/logo.png",
     "engines": {
@@ -10,7 +10,7 @@
     },
     "categories": [
         "Other",
-        "Languages"
+        "Programming Languages"
     ],
     "keywords": [
         "AutoComplete",
@@ -29,7 +29,10 @@
         "type": "git",
         "url": "https://github.com/formulahendry/vscode-auto-close-tag.git"
     },
-    "extensionKind": ["ui", "workspace"],
+    "extensionKind": [
+        "ui",
+        "workspace"
+    ],
     "activationEvents": [
         "*",
         "onCommand:auto-close-tag.closeTag"
@@ -73,6 +76,7 @@
                         "lang-cfml",
                         "cfml",
                         "HTML (EEx)",
+                        "HTML (Eex)",
                         "plist"
                     ],
                     "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages.",
@@ -80,7 +84,24 @@
                 },
                 "auto-close-tag.excludedTags": {
                     "type": "array",
-                    "default": ["area", "base", "br", "col", "command", "embed", "hr", "img", "input", "keygen", "link", "meta", "param", "source", "track", "wbr"],
+                    "default": [
+                        "area",
+                        "base",
+                        "br",
+                        "col",
+                        "command",
+                        "embed",
+                        "hr",
+                        "img",
+                        "input",
+                        "keygen",
+                        "link",
+                        "meta",
+                        "param",
+                        "source",
+                        "track",
+                        "wbr"
+                    ],
                     "description": "Set the tag list that would not be auto closed.",
                     "scope": "resource"
                 },
