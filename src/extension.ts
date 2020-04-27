@@ -38,7 +38,8 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
 
     let languageId = editor.document.languageId;
     let languages = config.get<string[]>("activationOnLanguage", ["*"]);
-    if (languages.indexOf("*") === -1 && languages.indexOf(languageId) === -1) {
+    let disableOnLanguage = config.get<string[]>("disableOnLanguage", []);
+    if ((languages.indexOf("*") === -1 && languages.indexOf(languageId) === -1) || disableOnLanguage.indexOf(languageId) !== -1) {
         return;
     }
 
