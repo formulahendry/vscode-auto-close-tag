@@ -87,6 +87,16 @@ Add entry into `auto-close-tag.activationOnLanguage` to set the languages that t
 ```
 **Note:** The setting should be set with language id defined in [VS Code](https://github.com/Microsoft/vscode/tree/master/extensions). Taking [javascript definition](https://github.com/Microsoft/vscode/blob/master/extensions/javascript/package.json) as an example, we need to use `javascript` for `.js` and `.es6`, use `javascriptreact` for `.jsx`. So, if you want to enable this extension on `.js` file, you need to add `javascript` in settings.json.
 
+Alternatively you could also exlude the languages where you don't want the extension to be activated. Below is an example:
+```json
+{
+    "auto-close-tag.disableOnLanguage": [
+        "php",
+        "python"
+    ]
+}
+```
+
 You could also set the tag list that would not be auto closed. Below are the default settings for void elements in HTML per [W3C spec](https://www.w3.org/TR/html-markup/syntax.html#syntax-elements), and you could overwrite it:
 ```json
 {

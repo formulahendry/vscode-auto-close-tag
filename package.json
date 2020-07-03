@@ -82,6 +82,12 @@
                     "description": "Set the languages that the extension will be activated.  e.g. [\"html\",\"xml\",\"php\"]. Use [\"*\"] to activate for all languages.",
                     "scope": "resource"
                 },
+                "auto-close-tag.disableOnLanguage": {
+                    "type": "array",
+                    "default": [],
+                    "description": "Set the languages where the extension will be disabled.  e.g. [\"html\",\"xml\",\"php\"].",
+                    "scope": "resource"
+                },
                 "auto-close-tag.excludedTags": {
                     "type": "array",
                     "default": [
