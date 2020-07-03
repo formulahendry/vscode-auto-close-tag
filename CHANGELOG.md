@@ -1,3 +1,6 @@
+### 0.5.8 (2020-07-03)
+* [#175](https://github.com/formulahendry/vscode-auto-close-tag/pull/175): Add new setting 'Added disableOnLanguage'
+
 ### 0.5.7 (2020-04-21)
 * Update support for embedded elixir
 * Add support for Apple's property list type (plist)
