@@ -1,3 +1,6 @@
+### 0.5.9 (2020-10-11)
+* [#106](https://github.com/formulahendry/vscode-auto-close-tag/pull/106): Support for auto closing tags starting with underscore
+
 ### 0.5.8 (2020-07-03)
 * [#175](https://github.com/formulahendry/vscode-auto-close-tag/pull/175): Add new setting 'Added disableOnLanguage'
 
