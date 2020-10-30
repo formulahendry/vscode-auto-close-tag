@@ -129,6 +129,12 @@
                     "description": "Whether to close self-closing tag automatically",
                     "scope": "resource"
                 },
+                "auto-close-tag.selfClosingSpace": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Add a space before self-closing brackets",
+                    "scope": "resource"
+                },
                 "auto-close-tag.fullMode": {
                     "type": "boolean",
                     "default": false,

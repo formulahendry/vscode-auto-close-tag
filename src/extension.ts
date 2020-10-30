@@ -89,12 +89,32 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
                         editor.selection = new vscode.Selection(originalPosition, originalPosition);
                     });
                 }
-            } else {
-                if (textLine.text.length <= selection.start.character + 1 || textLine.text[selection.start.character + 1] !== '>') { // if not typing "/" just before ">", add the ">" after "/"
-                    editor.edit((editBuilder) => {
-                        editBuilder.insert(originalPosition, ">");
-                    })
-                }
+
+                return;
+            }
+
+            // if not typing "/" just before ">", add the ">" after "/"
+            if (
+                textLine.text.length <= selection.start.character + 1 ||
+                textLine.text[selection.start.character + 1] !== '>'
+            ) {
+                const selfClosingSpace = config.get<boolean>('selfClosingSpace');
+
+                const start = selfClosingSpace
+                    ? selection.start
+                    : originalPosition;
+                const replaceRange = new vscode.Range(start, originalPosition);
+
+                const replacement = selfClosingSpace
+                    ? ' />'
+                    : '>';
+
+                editor.edit((editBuilder) => {
+                    return editBuilder.replace(replaceRange, replacement);
+                }).then(() => {
+                    const end = new vscode.Position(originalPosition.character + 2, originalPosition.character + 2);
+                    editor.selection = new vscode.Selection(end, end);
+                })
             }
         }
     }
@@ -177,4 +197,4 @@ function moveSelectionRight(selection: vscode.Selection, shift: number): vscode.
 
 function occurrenceCount(source: string, find: string): number {
     return source.split(find).length - 1;
-} 
+}
