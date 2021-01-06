@@ -1,3 +1,6 @@
+### 0.5.10 (2021-01-06)
+* Add sponsor for Tabnine
+
 ### 0.5.9 (2020-10-11)
 * [#106](https://github.com/formulahendry/vscode-auto-close-tag/pull/106): Support for auto closing tags starting with underscore
 
