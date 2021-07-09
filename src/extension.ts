@@ -92,6 +92,10 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
             } else {
                 if (textLine.text.length <= selection.start.character + 1 || textLine.text[selection.start.character + 1] !== '>') { // if not typing "/" just before ">", add the ">" after "/"
                     editor.edit((editBuilder) => {
+                        if (config.get<boolean>("insertSpaceBeforeSelfClosingTag")) {
+                            const spacePosition = originalPosition.translate(0, -1);
+                            editBuilder.insert(spacePosition, " ");
+                        }
                         editBuilder.insert(originalPosition, ">");
                     })
                 }
@@ -177,4 +181,4 @@ function moveSelectionRight(selection: vscode.Selection, shift: number): vscode.
 
 function occurrenceCount(source: string, find: string): number {
     return source.split(find).length - 1;
-} 
+}

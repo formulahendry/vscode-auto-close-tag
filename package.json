@@ -129,6 +129,12 @@
                     "description": "Whether to close self-closing tag automatically",
                     "scope": "resource"
                 },
+                "auto-close-tag.insertSpaceBeforeSelfClosingTag": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Insert a space before the forward slash in a self-closing tag.",
+                    "scope": "resource"
+                },
                 "auto-close-tag.fullMode": {
                     "type": "boolean",
                     "default": false,
