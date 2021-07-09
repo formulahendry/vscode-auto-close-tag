@@ -1,3 +1,6 @@
+### 0.5.11 (2021-07-09)
+* Support self-closing tags with space
+
 ### 0.5.10 (2021-01-06)
 * Add sponsor for Tabnine
 
