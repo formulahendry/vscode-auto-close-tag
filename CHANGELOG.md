@@ -1,3 +1,6 @@
+### 0.5.12 (2021-07-31)
+* Support Workspace Trust and Virtual Workspaces
+
 ### 0.5.11 (2021-07-09)
 * Support self-closing tags with space
 
