@@ -16,6 +16,9 @@ Eliminate context switching and costly distractions. Create and merge PRs and pe
 [![Stepsize](images/stepsize.png)](https://bit.ly/3yudkl3)<br>
 Track and prioritise tech debt and maintenance issues, straight from your IDE. Bookmark code while you work, organise TODOs and share codebase knowledge with your team. [Try it out for free today](https://bit.ly/3yudkl3).
 
+[![Bloop](images/bloop.png)](https://bloop.ai/?utm_source=vscmarket&utm_campaign=formulahendry&utm_medium=banner)<br>
+Bored of trawling through the docs? Get JS and TS code examples from documentation and Open Source right in your IDE. [Learn more](https://bloop.ai/?utm_source=vscmarket&utm_campaign=formulahendry&utm_medium=banner).
+
 ## Book for VS Code
 
 [《Visual Studio Code 权威指南》](https://union-click.jd.com/jdc?e=jdext-1261348777639735296-0&p=AyIGZRhbHQsWAVIaXxEyEgRdG1sRBxU3EUQDS10iXhBeGlcJDBkNXg9JHUlSSkkFSRwSBF0bWxEHFRgMXgdIMkRxFAUJD1RQZT0cBnwKDE4%2BaDpgB2ILWStbHAIQD1QaWxIBIgdUGlsRBxEEUxprJQIXNwd1g6O0yqLkB4%2B%2FjcePwitaJQIWD1cfWhwKGwVSG1wlAhoDZc31gdeauIyr%2FsOovNLYq46cqca50ytrJQEiXABPElAeEgRSG1kQCxQBUxxZHQQQA1YTXAkDIgdUGlscChECXRs1FGwSD1UbWRALFwRWK1slASJZOxoLRlUXU1NONU9QEkdXWRlJbBUDVB9TFgAVN1caWhcA)：带你深入浅出 VS Code！
