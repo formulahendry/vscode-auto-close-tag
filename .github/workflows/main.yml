@@ -25,7 +25,3 @@ jobs:
           node-version: 16.x
       - run: npm install
       - run: npm run vscode:prepublish
-      - run: xvfb-run -a npm test --silent
-        if: runner.os == 'Linux'
-      - run: npm test --silent
-        if: runner.os != 'Linux'
