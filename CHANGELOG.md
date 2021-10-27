@@ -1,3 +1,6 @@
+### 0.5.13 (2021-10-27)
+* Update link for Tabnine
+
 ### 0.5.12 (2021-07-31)
 * Support Workspace Trust and Virtual Workspaces
 
