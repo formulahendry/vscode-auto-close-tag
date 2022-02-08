@@ -1,3 +1,6 @@
+### 0.5.14 (2022-02-08)
+* Add sponsor for Duckly
+
 ### 0.5.13 (2021-10-27)
 * Update link for Tabnine
 
