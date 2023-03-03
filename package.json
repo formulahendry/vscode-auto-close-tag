@@ -158,7 +158,7 @@
         "@types/mocha": "^2.2.32",
         "@types/node": "^6.0.40",
         "@types/vscode": "^1.49.0",
-        "mocha": "^2.3.3",
+        "mocha": "^10.2.0",
         "typescript": "^3.9.10"
     }
 }
