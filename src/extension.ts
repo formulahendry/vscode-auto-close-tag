@@ -18,7 +18,7 @@ export function deactivate() {
 }
 
 function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
-    if (!event.contentChanges[0]) {
+    if (!event.contentChanges[0] || ( event.reason && event.reason == vscode.TextDocumentChangeReason.Undo ) || ( event.reason && event.reason == vscode.TextDocumentChangeReason.Redo ) ) {
         return;
     }
     let isRightAngleBracket = CheckRightAngleBracket(event.contentChanges[0]);
@@ -27,7 +27,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
     }
 
     let editor = vscode.window.activeTextEditor;
-    if (!editor) {
+    if (!editor || ( editor && event.document !== editor.document ) ) {
         return;
     }
 
