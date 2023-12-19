@@ -1,3 +1,6 @@
+### 0.5.15 (2023-12-09)
+* [#222](https://github.com/formulahendry/vscode-auto-close-tag/pull/222): Fix for undo/redo
+
 ### 0.5.14 (2022-02-08)
 * Add sponsor for Duckly
 
