@@ -69,6 +69,8 @@
                         "php",
                         "blade",
                         "ejs",
+                        "glimmer-js",
+                        "glimmer-ts",
                         "jinja",
                         "javascript",
                         "javascriptreact",
