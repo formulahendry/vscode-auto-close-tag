@@ -50,7 +50,7 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
     let enableAutoCloseSelfClosingTag = config.get<boolean>("enableAutoCloseSelfClosingTag", true);
     let isFullMode = config.get<boolean>("fullMode");
 
-    if ((isSublimeText3Mode || isFullMode) && event.contentChanges[0].text === "/") {
+    if ((isSublimeText3Mode || isFullMode) && event.contentChanges[0].text === "/" && isPositionInSupportedScopeForLanguage(editor, originalPosition, languageId)) {
         let text = editor.document.getText(new vscode.Range(new vscode.Position(0, 0), originalPosition));
         let last2chars = "";
         if (text.length > 2) {
@@ -74,8 +74,9 @@ function insertAutoCloseTag(event: vscode.TextDocumentChangeEvent): void {
         }
     }
 
-    if (((!isSublimeText3Mode || isFullMode) && isRightAngleBracket) ||
-        (enableAutoCloseSelfClosingTag && event.contentChanges[0].text === "/")) {
+    if ((((!isSublimeText3Mode || isFullMode) && isRightAngleBracket) ||
+        (enableAutoCloseSelfClosingTag && event.contentChanges[0].text === "/"))
+        && isPositionInSupportedScopeForLanguage(editor, originalPosition, languageId)) {
         let textLine = editor.document.lineAt(selection.start);
         let text = textLine.text.substring(0, selection.start.character + 1);
         let result = /<([_a-zA-Z][a-zA-Z0-9:\-_.]*)(?:\s+[^<>]*?[^\s/<>=]+?)*?\s?(\/|>)$/.exec(text);
@@ -125,7 +126,7 @@ function insertCloseTag(): void {
     let config = vscode.workspace.getConfiguration('auto-close-tag', editor.document.uri);
     let excludedTags = config.get<string[]>("excludedTags", []);
     let text = editor.document.getText(new vscode.Range(new vscode.Position(0, 0), originalPosition));
-    if (text.length > 2) {
+    if (text.length > 2 && isPositionInSupportedScopeForLanguage(editor, originalPosition, editor.document.languageId)) {
         let closeTag = getCloseTag(text, excludedTags);
         if (closeTag) {
             editor.edit((editBuilder) => {
@@ -181,4 +182,12 @@ function moveSelectionRight(selection: vscode.Selection, shift: number): vscode.
 
 function occurrenceCount(source: string, find: string): number {
     return source.split(find).length - 1;
+}
+
+function isPositionInSupportedScopeForLanguage(editor: vscode.TextEditor, position: vscode.Position, languageId: string): boolean {
+    if (languageId === 'glimmer-js' || languageId === 'glimmer-ts') {
+        const text = editor.document.getText(new vscode.Range(new vscode.Position(0, 0), position));
+        return text.lastIndexOf('<template>') > text.lastIndexOf('</template>');
+    }
+    return true;
 }
